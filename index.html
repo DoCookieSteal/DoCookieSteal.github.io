@@ -2,9 +2,7 @@
  <head>
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>
-   ok
-  </title>
+  <title>ok</title>
   <meta content="well i exist..." property="og:title"/>
   <meta content="im going crazy atp." property="og:description"/>
   <meta content="https://blouzy.xyz/" property="og:url"/>
@@ -13,7 +11,7 @@
   <script type="application/javascript" src="script.js"></script>
   <script type="application/javascript" src="sparkle.js"></script>
   <script type="application/javascript" src="get touched.js"></script>
-<style>
+  <style>
     body {
         margin: 0;
         padding: 0;
@@ -65,13 +63,13 @@
   </style>
  </head>
  <body>
-    <!-- Du kannst deine Musik auf einer dieser Plattformen hosten:
+    <!-- Music hosting options:
          - pomf.lain.la
          - catbox.moe 
-         - cdn.discordapp.com (Upload in Discord, Rechtsklick -> Link kopieren)
+         - cdn.discordapp.com (Upload to Discord, right-click -> Copy link)
     -->
     <audio id="backgroundMusic" autoplay loop>
-        <source src="https://cdn.discordapp.com/attachments/1351905185923862642/1357834325835386980/music.mp3?ex=67f1a542&is=67f053c2&hm=d57e37889be53be69a8ff75dd09aad171ec66a464fbd6b12e369e9c70125bc09&.mp3" type="audio/mp3">
+        <source src="https://cdn.discordapp.com/attachments/1351905185923862642/1357834325835386980/music.mp3?ex=67f1a542&is=67f053c2&hm=d57e37889be53be69a8ff75dd09aad171ec66a464fbd6b12e369e9c70125bc09&" type="audio/mp3">
     </audio>
 
     <div onclick="userHasClicked()" id="flexboxcontainer">
@@ -83,41 +81,26 @@
         </div>
     </div>
   <div id="hiddencontainer">
-   <h1 class="accent flickertext" id="niggertext" style="--rand: 0.7909047163525016;">
-    Pasham
-   </h1>
-   <p class="flickertext accent1" style="--rand: 0.7909047163525016;">
-    &lt; I aspire to be someone &gt;
-   </p>
+   <h1 class="accent flickertext" id="niggertext" style="--rand: 0.7909047163525016;">Pasham</h1>
+   <p class="flickertext accent1" style="--rand: 0.7909047163525016;">&lt; I aspire to be someone &gt;</p>
    <hr class="solid flickertext" style="--rand: 0.7909047163525016;"/>
    <div class="flex-row flickertext" style="--rand: 0.7909047163525016;">
     <a href="https://discord.com/users/1311939890929471620">
-        <img src="discord.png" alt="Discord" style="width: 24px; height: 24px;">
-      </a>
-      <p class="gray-accent">
-        *
-      </p>
-      <a href="">
-        <img src="telegram.png" alt="Telegram" style="width: 24px; height: 24px;">
-      </a>
-      <p class="gray-accent">
-        *
-      </p>
-      <a href="https://discord.gg/ugcom">
-        <img src="internet.png" alt="Site" style="width: 24px; height: 24px;">
-      </a>      
+        <img src="discord.png" alt="Discord">
+    </a>
+    <p class="gray-accent">*</p>
+    <a href=""><img src="telegram.png" alt="Telegram"></a>
+    <p class="gray-accent">*</p>
+    <a href="https://discord.gg/ugcom"><img src="internet.png" alt="Site"></a>      
    </div>
    <div id="viewercount-container">
-    <p id="viewercount">
-     view count: 4.032
-    </p>
+    <p id="viewercount">view count: 4.032</p>
    </div>
   </div>
 
   <script>
     window.onload = function() {
         var music = document.getElementById('backgroundMusic');
-        
         document.body.addEventListener('click', function() {
             music.play().catch(function(error) {
                 console.log("Audio play failed:", error);
