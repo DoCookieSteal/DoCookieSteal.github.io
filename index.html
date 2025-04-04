@@ -15,6 +15,15 @@
   <script type="application/javascript" src="get touched.js"></script>
  </head>
  <body>
+    <!-- Du kannst deine Musik auf einer dieser Plattformen hosten:
+         - pomf.lain.la
+         - catbox.moe 
+         - cdn.discordapp.com (Upload in Discord, Rechtsklick -> Link kopieren)
+    -->
+    <audio id="backgroundMusic" autoplay loop>
+        <source src="https://cdn.discordapp.com/attachments/1351905185923862642/1357834325835386980/music.mp3?ex=67f1a542&is=67f053c2&hm=d57e37889be53be69a8ff75dd09aad171ec66a464fbd6b12e369e9c70125bc09&.mp3" type="audio/mp3">
+    </audio>
+
     <div onclick="userHasClicked()" id="flexboxcontainer">
         <div class="clicktocontinuecontainer">
             <p class="center accent">click</p>
@@ -54,5 +63,17 @@
     </p>
    </div>
   </div>
+
+  <script>
+    window.onload = function() {
+        var music = document.getElementById('backgroundMusic');
+        
+        document.body.addEventListener('click', function() {
+            music.play().catch(function(error) {
+                console.log("Audio play failed:", error);
+            });
+        });
+    }
+  </script>
  </body>
 </html>
