@@ -1,0 +1,165 @@
+@font-face {
+    font-family: 'TopazPlus';
+    src: url('TopazPlus.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: Mario;
+    src: url("mario.otf") format("opentype");
+}
+
+@keyframes flicker {
+    0% {
+        text-shadow: black 0px 0 50px;
+    }
+    50% {
+        text-shadow: rgba(0, 0, 0, var(--rand)) 0px 0 50px;
+    }
+    100% {
+        text-shadow: black 0px 0 50px;
+    }
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    background-color: #121212;
+    color: #B0B0B0;
+    font-family: 'TopazPlus', 'Courier New', Courier, monospace;
+    cursor: url('cur.png'), auto;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    text-shadow: #000 0px 0 50px;
+}
+
+h1 {
+    font-family: 'Mario';
+    font-size: 50px;
+    color: #A9A9A9;
+}
+
+hr.solid {
+    margin: 0px;
+    margin-top: 5px;
+    width: 200px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-color: #333333;
+}
+
+.accent {
+    color: #333333;
+    text-shadow: #333333 0px 0 50px;
+}
+
+.accent1 {
+    color: rgba(59, 59, 59, 0.5);
+    text-shadow: rgba(134, 134, 134, 0.5), 0px 0 50px;
+}
+
+a:link {
+    color: #B0B0B0;
+}
+
+a:visited {
+    color: #B0B0B0;
+}
+
+a {
+    transition: 0.3s;
+}
+
+a:hover {
+    color: #333333;
+    cursor: url('cur.png'), auto;
+}
+
+a:active {
+    color: #B0B0B0;
+}
+
+a:link, a:visited {
+    text-decoration: none;
+}
+
+.flickertext {
+    --rand: .0;
+    animation: flicker 1s infinite;
+}
+
+.clicktocontinuecontainer {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    opacity: 0;
+    transition: 0.3s;
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.clicktocontinuecontainer:hover {
+    opacity: .6;
+}
+
+.center {
+    margin: 0;
+    text-align: center;
+}
+
+.flex-row {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin: 5px;
+}
+
+#hiddencontainer {
+    display: none;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    line-height: 0px;
+
+    opacity: 0; 
+    transition: opacity 3s ease;
+}
+
+#flexboxcontainer {
+    background-color: transparent;
+
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#viewercount {
+    opacity: .75;
+    color: #A9A9A9;
+}
+
+#viewercount-container {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    opacity: 0.75;
+    padding-bottom: 10px;
+    z-index: 10; /* To ensure it's on top of any other content */
+}
